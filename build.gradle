@@ -24,13 +24,30 @@ repositories {
 }
 
 dependencies {
+
+	//Database
+	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.postgresql:postgresql'
+
+	//aws
+	implementation platform('software.amazon.awssdk:bom:2.25.26')
+	implementation 'software.amazon.awssdk:ssm'
+
+	//web
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-	compileOnly 'org.projectlombok:lombok'
-	developmentOnly 'org.springframework.boot:spring-boot-devtools'
-	runtimeOnly 'org.postgresql:postgresql'
-	annotationProcessor 'org.projectlombok:lombok'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+
+	//log
+	compileOnly 'org.projectlombok:lombok'
+	annotationProcessor 'org.projectlombok:lombok'
+	developmentOnly 'org.springframework.boot:spring-boot-devtools'
+
+	//datasource
+	runtimeOnly 'org.postgresql:postgresql'
+
+	//test
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
 }
 
