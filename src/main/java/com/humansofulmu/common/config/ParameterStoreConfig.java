@@ -31,6 +31,7 @@ public class ParameterStoreConfig {
     private GetParameterRequest createParameterRequest(String endpoint) {
         return GetParameterRequest.builder()
                 .name(endpoint)
+                .withDecryption(true)
                 .build();
     }
 
