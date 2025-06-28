@@ -1,3 +1,5 @@
 databaseChangeLog:
   - include:
-      file: classpath:/db/changelog/changes/create-post-v3.sql
+      file: classpath:/db/changelog/changes/create-post-v4.sql
+  - include:
+      file: classpath:/db/changelog/changes/delete-post.sql
