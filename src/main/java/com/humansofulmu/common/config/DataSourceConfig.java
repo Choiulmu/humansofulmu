@@ -12,8 +12,7 @@ import javax.sql.DataSource;
 @RequiredArgsConstructor
 public class DataSourceConfig {
 
-    @Autowired
-    private ParameterStoreConfig parameterStoreConfig;
+    private final ParameterStoreConfig parameterStoreConfig;
 
     @Bean
     public DataSource dataSource() {
