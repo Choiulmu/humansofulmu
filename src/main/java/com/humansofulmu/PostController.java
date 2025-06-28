@@ -2,6 +2,7 @@ package com.humansofulmu;
 
 import com.humansofulmu.common.resonse.ResultVO;
 import com.humansofulmu.common.resonse.SuccessCode;
+import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -11,6 +12,7 @@ import java.util.List;
 @RestController
 @RequestMapping("/posts")
 @RequiredArgsConstructor
+@Tag(name = "Posts API", description = "블로그 post 관련 API")
 public class PostController {
 
     private final PostService postService;
