@@ -8,7 +8,7 @@ import software.amazon.awssdk.services.ssm.SsmClient;
 @Configuration
 public class ClientConfig {
 
-    @Bean(name="ssmClient")
+    @Bean(name = "ssmClient")
     public SsmClient ssmClient() {
         return SsmClient.builder()
                 .region(Region.AP_NORTHEAST_2)
