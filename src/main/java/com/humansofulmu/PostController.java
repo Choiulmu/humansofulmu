@@ -6,6 +6,7 @@ import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import java.util.List;
 
@@ -16,6 +17,7 @@ import java.util.List;
 public class PostController {
 
     private final PostService postService;
+    private final Md2TaskParser md2TaskParser;
 
     @GetMapping("")
     public ResponseEntity<ResultVO<List<PostResponseDTO>>> getAllPosts() {
@@ -31,7 +33,9 @@ public class PostController {
 
 
     @PostMapping("")
-    public ResponseEntity<ResultVO<Void>> createPost(@RequestBody PostRequestDTO postRequestDTO) {
+    public ResponseEntity<ResultVO<Void>> createPost(@RequestPart("file") MultipartFile mdFile) {
+        String content = md2TaskParser.convertMd2String(mdFile);
+        PostRequestDTO postRequestDTO = md2TaskParser.parse2DTO(content);
         postService.createPost(postRequestDTO);
         return ResponseEntity.ok(new ResultVO<>(SuccessCode.INSERT_SUCCESS));
     }
