@@ -27,6 +27,7 @@ dependencies {
 
 	//Database
 	implementation 'org.springframework.boot:spring-boot-starter-jdbc'
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.postgresql:postgresql'
 
 	//aws
@@ -46,6 +47,10 @@ dependencies {
 
 	//datasource
 	runtimeOnly 'org.postgresql:postgresql'
+	implementation 'org.liquibase:liquibase-core'
+
+	//security
+	implementation 'org.springframework.boot:spring-boot-starter-security'
 
 	//test
 	testRuntimeOnly 'org.junit.platform:junit-platform-launcher'
