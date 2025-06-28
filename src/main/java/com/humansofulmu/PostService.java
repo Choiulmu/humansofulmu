@@ -24,8 +24,8 @@ public class PostService {
     }
 
     @Transactional
-    public void createPost(PostDTO postDTO) {
-        Post post = postDTO.toEntity();
+    public void createPost(PostRequestDTO postRequestDTO) {
+        Post post = postRequestDTO.toEntity();
         postRepo.save(post);
     }
 

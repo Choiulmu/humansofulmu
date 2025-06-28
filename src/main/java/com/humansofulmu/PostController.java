@@ -29,8 +29,8 @@ public class PostController {
 
 
     @PostMapping("")
-    public ResponseEntity<ResultVO<Void>> createPost(@RequestBody PostDTO postDTO) {
-        postService.createPost(postDTO);
+    public ResponseEntity<ResultVO<Void>> createPost(@RequestBody PostRequestDTO postRequestDTO) {
+        postService.createPost(postRequestDTO);
         return ResponseEntity.ok(new ResultVO<>(SuccessCode.INSERT_SUCCESS));
     }
 
