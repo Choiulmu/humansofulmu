@@ -36,14 +36,14 @@ public class PostController {
         return ResponseEntity.ok(new ResultVO<>(SuccessCode.INSERT_SUCCESS));
     }
 
-    @PatchMapping("/{id}/user")
+    @PutMapping("/{id}/user")
     public ResponseEntity<ResultVO<Void>> updatePostUser(@PathVariable long id, @RequestParam String userName) {
         postService.updatePostUser(id, userName);
         return ResponseEntity.ok(new ResultVO<>(SuccessCode.UPDATE_SUCCESS));
     }
 
 
-    @PatchMapping("/{id}/content")
+    @PutMapping("/{id}/content")
     public ResponseEntity<ResultVO<Void>> updatePostContent(@PathVariable long id, @RequestParam String content) {
         postService.updatePostContent(id, content);
         return ResponseEntity.ok(new ResultVO<>(SuccessCode.UPDATE_SUCCESS));
