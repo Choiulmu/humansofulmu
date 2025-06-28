@@ -1,9 +1,7 @@
 package com.humansofulmu.entity;
 
 import jakarta.persistence.*;
-import lombok.Builder;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
@@ -11,8 +9,10 @@ import java.time.LocalDateTime;
 
 @Entity
 @Builder
+@NoArgsConstructor
+@AllArgsConstructor
 @Getter @Setter
-@Table(name = "post")
+@Table(name = "posts")
 public class Post {
 
     @Id
@@ -22,7 +22,7 @@ public class Post {
     @Column(name = "`user`")
     private String user;
 
-    @Column(name = "content", nullable = false, length = 1000)
+    @Column(name = "content", nullable = false)
     private String content;
 
     @CreationTimestamp
