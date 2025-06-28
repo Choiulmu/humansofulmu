@@ -10,9 +10,9 @@ import java.util.Optional;
 
 public interface PostRepository extends JpaRepository<Post, Long> {
 
-    @Query(value = "SELECT id, content FROM post", nativeQuery = true)
+    @Query(value = "SELECT id, content FROM posts", nativeQuery = true)
     List<PostResponseDTO> findAllPosts();
 
-    @Query(value = "SELECT id, content FROM post WHERE id = :id", nativeQuery = true)
+    @Query(value = "SELECT id, content FROM posts WHERE id = :id", nativeQuery = true)
     Optional<PostResponseDTO> findPostById(@Param("id") long id);
 }
